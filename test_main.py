@@ -19,3 +19,22 @@ def test_word_to_score():
     ))
     for w, s in words_dict.iteritems():
         expect(word_to_score(w)).to(be(s))
+
+
+def test_words_to_scores():
+    words = (
+        "catty",
+        "wampus",
+        "am",
+        "bumfuzzle",
+        "gardyloo",
+        "taradiddle",
+        "loo",
+        "snickersnee",
+        "widdershins",
+        "teabag",
+        "collywobbles",
+        "gubbins"
+    )
+    scores = (2, 3, 0, 11, 11, 11, 1, 11, 11, 3, 11, 5)
+    expect(words_to_scores(words)).to(be(scores))
