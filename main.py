@@ -25,4 +25,12 @@ def compute_player_scores(players_and_words):
     """
     Given the final board situation as <players_and_words> returns players and their scores as dict
     """
-    return {player: sum(words_to_scores(words)) for player, words in players_and_words.items()}
+    def unique_words_of_player(player):
+        o = [set(players_and_words[p])
+             for p in players_and_words if p != player]
+        other_words = reduce(lambda x, y: x | y, o, set())
+        unique_words = set(players_and_words[player]) - other_words
+        return unique_words
+
+    return {player: sum(words_to_scores(unique_words_of_player(player)))
+            for player in players_and_words}

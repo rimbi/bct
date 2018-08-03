@@ -48,3 +48,15 @@ def test_when_a_player_did_not_find_any_word_its_score_should_be_zero():
         'Tom': 0
     }
     expect(compute_player_scores(input)).to(equal(output))
+
+
+def test_words_not_unique_to_each_player_should_not_be_counted():
+    input = {
+        'Tom': ["ammy"],
+        'Lucas': ["wine", "house", "ammy"]
+    }
+    output = {
+        'Tom': 0,
+        'Lucas': 3,
+    }
+    expect(compute_player_scores(input)).to(equal(output))
