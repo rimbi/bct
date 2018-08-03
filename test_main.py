@@ -1,8 +1,9 @@
 from expects import expect, be
+from main import word_to_score
 
 
 def test_word_to_score():
-    words_dict = dict(
+    words_dict = dict((
         ("catty", 2),
         ("wampus", 3),
         ("am", 0),
@@ -15,6 +16,6 @@ def test_word_to_score():
         ("teabag", 3),
         ("collywobbles", 11),
         ("gubbins", 5)
-    )
+    ))
     for w, s in words_dict.iteritems():
-        expect(words_to_score(w)).to(be(s))
+        expect(word_to_score(w)).to(be(s))
