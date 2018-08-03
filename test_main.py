@@ -1,5 +1,6 @@
-from expects import expect, be
+from expects import expect, be, equal
 from main import word_to_score
+from main import words_to_scores
 
 
 def test_word_to_score():
@@ -36,5 +37,5 @@ def test_words_to_scores():
         "collywobbles",
         "gubbins"
     )
-    scores = (2, 3, 0, 11, 11, 11, 1, 11, 11, 3, 11, 5)
-    expect(words_to_scores(words)).to(be(scores))
+    scores = [2, 3, 0, 11, 11, 11, 1, 11, 11, 3, 11, 5]
+    expect(words_to_scores(words)).to(equal(scores))

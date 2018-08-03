@@ -12,3 +12,10 @@ def word_to_score(w):
     if length == 7:
         return 5
     return 11
+
+
+def words_to_scores(words):
+    """
+    Given a list of <words> returns a list of their Boggle scores
+    """
+    return [word_to_score(word) for word in words]
