@@ -1,5 +1,9 @@
+#!/usr/bin/env python
+
+"""test_score.py: Executes test input and prints results."""
+
 from expects import expect, be, equal
-from main import word_to_score, words_to_scores, compute_player_scores
+from score import word_to_score, words_to_scores, compute_player_scores
 
 
 def test_word_to_score():

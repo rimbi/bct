@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+"""score.py: A package to calculate Boggle game scores."""
+
+
 def word_to_score(w):
     """
     Given a word <w> returns its Boggle score
