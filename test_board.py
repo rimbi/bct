@@ -73,7 +73,7 @@ def test_given_a_corner_cell_board_should_return_neighbour_cells():
 
 def test_board_should_verify_single_char_words():
     # given
-    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'], dictionary=['F', 'DOG'])
+    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     # when
     res = board.contains('F')
     # then
@@ -82,7 +82,7 @@ def test_board_should_verify_single_char_words():
 
 def test_board_should_verify_vertical_two_chars_words():
     # given
-    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'], dictionary=['FU', 'DOG'])
+    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     # when
     res = board.contains('FU')
     # then
@@ -91,7 +91,7 @@ def test_board_should_verify_vertical_two_chars_words():
 
 def test_board_should_verify_horizontal_two_chars_words():
     # given
-    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'], dictionary=['AD', 'DOG'])
+    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     # when
     res = board.contains('AD')
     # then
@@ -100,7 +100,7 @@ def test_board_should_verify_horizontal_two_chars_words():
 
 def test_board_should_verify_diagonal_two_chars_words():
     # given
-    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'], dictionary=['AT', 'DOG'])
+    board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     # when
     res = board.contains('AT')
     # then
@@ -109,17 +109,8 @@ def test_board_should_verify_diagonal_two_chars_words():
 
 def test_board_should_verify_vertical_plus_horizontal_words():
     # given
-    board = Board(['CDHG', 'ADFF', 'TKJU', 'FSET'], dictionary=['CAT', 'FUTES'])
+    board = Board(['CDHG', 'ADFF', 'TKJU', 'FSET'])
     # when
     res = board.contains('FUTES')
     # then
     expect(res).to(be(True))
-
-
-def test_board_should_not_verify_words_not_in_the_dictionary():
-    # given
-    board = Board(['CATG', 'ADFF', 'TKJU', 'FSET'], dictionary=['CAT', 'DOG'])
-    # when
-    res = board.contains('AD')
-    # then
-    expect(res).to(be(False))

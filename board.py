@@ -50,9 +50,8 @@ class Board(object):
     Represents the Boggle game board
     """
 
-    def __init__(self, config, dictionary=()):
+    def __init__(self, config):
         self.config = config
-        self.dictionary = dictionary
 
     def _get_cells_of_char(self, c):
         for i, row in enumerate(self.config):
@@ -78,11 +77,7 @@ class Board(object):
     def contains(self, word):
         """
         Given a <word> returns True if it exists on the board
-        and in the dictionary provided
         """
-        if word not in self.dictionary:
-            return False
-
         starting_cells = list(self._get_cells_of_char(word[0]))
         if not starting_cells:
             return False
