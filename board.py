@@ -40,8 +40,9 @@ class Cell(object):
 
 class Board(object):
 
-    def __init__(self, config):
+    def __init__(self, config, dictionary=()):
         self.config = config
+        self.dictionary = dictionary
 
     def get_cells_of_char(self, c):
         for i, row in enumerate(self.config):
@@ -61,6 +62,9 @@ class Board(object):
                 yield c.ch
 
     def contains(self, word):
+        if word not in self.dictionary:
+            return False
+
         starting_cells = list(self.get_cells_of_char(word[0]))
         if not starting_cells:
             return False
