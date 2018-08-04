@@ -28,7 +28,7 @@ def test_given_a_char_board_should_return_corresponding_cells():
     # given
     board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     # when
-    res = board.get_cells_of_char('F')
+    res = board._get_cells_of_char('F')
     # then
     expect(list(res)).to(equal([Cell('F', 1, 2), Cell('F', 1, 3), Cell('F', 3, 0)]))
 
@@ -66,7 +66,7 @@ def test_given_a_corner_cell_board_should_return_neighbour_cells():
     board = Board(['CDHG', 'ADFF', 'TKJU', 'FTGT'])
     cell = Cell('C', 0, 0)
     # when
-    res = board.get_neighbour_cells(cell)
+    res = board._get_neighbour_cells(cell)
     # then
     expect(set(res)).to(equal(set([Cell('A', 1, 0), Cell('D', 1, 1), Cell('D', 0, 1)])))
 
