@@ -1,4 +1,4 @@
-# bct
+# python-boggle
 
 A mini Boggle game implementation
 
